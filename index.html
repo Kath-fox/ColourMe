@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Colour Picker</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+         crossorigin="anonymous" 
+         referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <header>
+        <h1 class="logo">ColourMe</h1>
+    </header>
+
+    <body>
+        <div class="flex-container">
+            <form class="colour-picker" id="colour-picker">
+                <input type="color" class="seed-colour" title="seed-colour" id="seed-colour" value="#4128f7" />
+                <select class="mode" title="colour-scheme-mode" id="mode">
+                    <option value="monochrome">monochrome</option>
+                    <option value="monochrome-light">monochrome-light</option>
+                    <option value="monochrome-dark">monochrome-dark</option>
+                    <option value="analogic">analogic</option>
+                    <option value="complement">complement</option>
+                    <option value="analogic-complement">analogic-complement</option>
+                    <option value="triad">triad</option>
+                    <option value="quad">quad</option>
+                </select>
+                <button type="submit" class="get-scheme-btn">get colour scheme</button>
+            </form>
+
+            <div class="colour-scheme">
+                <div class="colour0 colour-block" id="colour0">
+                </div> 
+                <div class="colour1 colour-block" id="colour1">
+                </div>
+                <div class="colour2 colour-block" id="colour2">
+                </div>
+                <div class="colour3 colour-block" id="colour3">
+                </div>
+                <div class="colour4 colour-block" id="colour4">
+                </div>
+            </div>
+        </div>
+        <script src="index.js"></script>
+    </body>
+
+</html>
