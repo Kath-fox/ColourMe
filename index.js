@@ -4,6 +4,32 @@ const colourPicker = document.getElementById('colour-picker')
 let coloursArr = []
 
 
+// Event Listeners
+document.addEventListener('click', function(e){
+    if(e.target.id === 'hex-val0'){
+        copyHexToClipboard(e.target.innerText)
+    }
+    if(e.target.id === 'hex-val1'){
+        copyHexToClipboard(e.target.innerText)
+    }
+    if(e.target.id === 'hex-val2'){
+        copyHexToClipboard(e.target.innerText)
+    }
+    if(e.target.id === 'hex-val3'){
+        copyHexToClipboard(e.target.innerText)
+    }
+    if(e.target.id === 'hex-val4'){
+        copyHexToClipboard(e.target.innerText)
+    }
+})
+
+colourPicker.addEventListener('submit', (e) => {
+    e.preventDefault()
+    renderPage()
+})
+
+
+// Rendering the page
 renderPage()
 
 function renderPage() {
@@ -17,21 +43,6 @@ function renderPage() {
             renderScheme()
         })
 }
-
-
-// handle colour picker form submit
-colourPicker.addEventListener('submit', (e) => {
-    e.preventDefault()
-    const seedColour = seedColourInput.value.slice(1)
-    const mode = modeInput.value
-    
-    fetch(`https://www.thecolorapi.com/scheme?hex=${seedColour}&mode=${mode}`)
-        .then(res => res.json())
-        .then(data => {
-            coloursArr = data.colors
-            renderScheme()
-        })
-})
 
 
 // render colour scheme from colours array
@@ -52,24 +63,6 @@ function renderScheme() {
 
 
 // Copy hex value to cipboard
-document.addEventListener('click', function(e){
-    if(e.target.id === 'hex-val0'){
-        copyHexToClipboard(e.target.innerText)
-    }
-    if(e.target.id === 'hex-val1'){
-        copyHexToClipboard(e.target.innerText)
-    }
-    if(e.target.id === 'hex-val2'){
-        copyHexToClipboard(e.target.innerText)
-    }
-    if(e.target.id === 'hex-val3'){
-        copyHexToClipboard(e.target.innerText)
-    }
-    if(e.target.id === 'hex-val4'){
-        copyHexToClipboard(e.target.innerText)
-    }
-})
-
 function copyHexToClipboard(hexCode){
     navigator.clipboard.writeText(hexCode)
         .then(() => {
